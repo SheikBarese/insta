@@ -14,16 +14,23 @@ url_insta = "https://www.instagram.com"
 
 
 option = Options()
+option.add_argument('--window-size=1920,1080') 
+option.add_argument('--start-maximized') 
+#option.add_argument('--headless')
+    
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=option)
 
-option.headless = True # ver ou nao o chrome abrindo
+
+# ver ou nao o chrome abrindo
 
 pagina = driver.get(url_insta) #abre a pagina
 
 # esperar o conteudo da pagina carregar
-time.sleep(6)
+time.sleep(10)
 # processo de entrar pelo facebook com minhas credenciais
 click_enter_by_facebook = driver.find_element_by_xpath('//html//body//div[1]//section//main//article//div[2]//div[1]//div//form//div[1]//div[5]//button').click()
+
+
 
 time.sleep(3)
 
