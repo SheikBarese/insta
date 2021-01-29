@@ -4,7 +4,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 
-
+global usuario, senha, perfil, metodo, driver
 
 #abrir a pagina do instagram no chrome
 url_insta = "https://www.instagram.com"
@@ -23,7 +23,6 @@ time.sleep(10)
 
 
 def open_chrome():
-    global driver
     driver = webdriver.Chrome(ChromeDriverManager().install(), options=option)
     driver.get(url_insta)
 
@@ -76,7 +75,6 @@ def enter_by_instagram():
     notifications_search()
 
 def pedir_credenciais():
-    global usuario, senha, perfil
     usuario = str(input(f"usuário/email do {metodo}: "))
     senha = str(input(f"senha do {metodo}: "))
     perfil = str(input("perfil : "))
@@ -88,14 +86,14 @@ def menu():
     print("2.Entrar pelo instagram.")
     print("+---------------------------+")
     selection = int(input("Escolha uma opção: "))
-    if selection == 1:
-        global metodo
+    
+    pedir_credenciais()
+    
+    if selection == 1:    
         metodo = 'facebook'
-        pedir_credenciais()
         enter_by_facebook()
     elif selection == 2:
         metodo = 'instagram'
-        pedir_credenciais()
         enter_by_instagram()
     else:
         menu()
