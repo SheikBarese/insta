@@ -13,7 +13,7 @@ url_insta = "https://www.instagram.com"
 option = Options()
 option.add_argument('--window-size=1920,1080') 
 option.add_argument('--start-maximized') 
-#option.add_argument('--headless')
+#option.add_argument('--headless') nao funciona 
     
 
 # esperar o conteudo da pagina carregar
