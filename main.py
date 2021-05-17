@@ -37,7 +37,7 @@ def notifications_search():
     time.sleep(3)
 
     #clicar no primeiro perfil achado
-    driver.find_element_by_xpath('//html//body//div[1]//section//nav//div[2]//div//div//div[2]//div[4]//div//a[1]').click()
+    driver.find_element_by_xpath('//html//body//div[1]//section//nav//div[2]//div//div//div[2]//div[3]//div//div[2]//div//div//a//div').click()
 
     #extrair numero de seguidores
     time.sleep(10)
